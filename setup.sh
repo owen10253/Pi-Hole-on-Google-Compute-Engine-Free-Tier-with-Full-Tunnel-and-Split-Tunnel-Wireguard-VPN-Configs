@@ -256,6 +256,7 @@ fi
 
 # install pihole if it has not been installed
 if ! type "pihole" > /dev/null; then
+	echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
 	curl -sSL https://install.pi-hole.net | bash
 fi
 
