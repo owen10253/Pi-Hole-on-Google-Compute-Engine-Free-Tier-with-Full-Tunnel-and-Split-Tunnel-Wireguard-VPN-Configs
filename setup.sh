@@ -257,7 +257,7 @@ fi
 # install pihole if it has not been installed
 if ! type "pihole" > /dev/null; then
 	echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/null
-	curl -sSL https://install.pi-hole.net | bash
+	curl -sSL https://install.pi-hole.net | sudo PIHOLE_SKIP_OS_CHECK=true bash
 fi
 
 # use client configurations to determine if this is the first run, and apply preferred initial configurations
